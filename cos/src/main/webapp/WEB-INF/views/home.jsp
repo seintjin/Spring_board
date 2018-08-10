@@ -12,7 +12,7 @@
 <h1>
 	Hello world!  
 </h1>
-<a href="view?bid=1">상세보기</a>
+<a href="view?bid=2">상세보기</a>
 
 </body>
 </html>

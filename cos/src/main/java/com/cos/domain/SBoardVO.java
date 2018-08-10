@@ -43,7 +43,7 @@ public class SBoardVO {
 		return bhit;
 	}
 	public void setBhit(int bhit) {
-		this.bhit =bhit;
+		this.bhit = bhit;
 	}
 	
 	

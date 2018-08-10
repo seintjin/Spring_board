@@ -19,6 +19,7 @@ import com.cos.domain.ApiVO;
 import com.cos.domain.SBoardVO;
 import com.cos.persistence.ApiDAO;
 import com.cos.persistence.SBoardDAO;
+import com.cos.service.SBoardService;
 
 /**
  * Handles requests for the application home page.
@@ -29,9 +30,8 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@Inject
-	private ApiDAO dao;
-	@Inject
-	private SBoardDAO sdao;
+	private SBoardService service;
+	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
@@ -41,8 +41,8 @@ public class HomeController {
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public String view(Model model,@RequestParam("bid") String bid) {
 			
-		SBoardVO sboard = sdao.view(bid);
-		sdao.uphit(bid);
+		SBoardVO sboard = service.contentView(bid);
+		
 		
 		model.addAttribute("sboard", sboard);
 		
